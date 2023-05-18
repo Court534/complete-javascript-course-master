@@ -16,31 +16,31 @@
 // Data 2: Marks weights 95 kg and is 1.88 m tall. John weights 85 kg and is 1.76m tall.
 
 // Data 1
-let heightMark = 1.69
-let weightMark = 78
-let markBMI = weightMark / heightMark ** 2 
-console.log(markBMI)
+let heightMark = 1.69;
+let weightMark = 78;
+let markBMI = weightMark / heightMark ** 2;
+console.log(markBMI);
 
-let heightJohn = 1.95
-let weightJohn = 92
-let johnBMI = weightJohn / heightJohn ** 2 
-console.log(johnBMI)
+let heightJohn = 1.95;
+let weightJohn = 92;
+let johnBMI = weightJohn / heightJohn ** 2;
+console.log(johnBMI);
 
-markHigherBMI = markBMI > johnBMI
+markHigherBMI = markBMI > johnBMI;
 
-console.log(markHigherBMI)
+console.log(markHigherBMI);
 
 // Data 1
-heightMark = 1.88
-weightMark = 95
-markBMI = weightMark / heightMark ** 2 
-console.log(markBMI)
+heightMark = 1.88;
+weightMark = 95;
+markBMI = weightMark / heightMark ** 2;
+console.log(markBMI);
 
-heightJohn = 1.76
-weightJohn = 85
-johnBMI = weightJohn / heightJohn ** 2 
-console.log(johnBMI)
+heightJohn = 1.76;
+weightJohn = 85;
+johnBMI = weightJohn / heightJohn ** 2;
+console.log(johnBMI);
 
-markHigherBMI = markBMI > johnBMI
+markHigherBMI = markBMI > johnBMI;
 
-console.log(markHigherBMI)
+console.log(markHigherBMI);
