@@ -74,6 +74,11 @@ console.log(`Portugal is in Europe, and its ${portugalPopulation} people speak p
 // console: 'Portugal's population is above average'. Otherwise, log a string like
 // 'Portugal's population is 22 million below average' (the 22 is the average of 33
 // minus the country's population)
+if (country > averagePopulation) {
+    console.log("Englands population is above average")
+} else {
+    console.log(`Portugals population is ${(population - portugalPopulation)} less that England`)
+}
 
 
 // 2. After checking the result, change the population temporarily to 13 and then to
