@@ -17,12 +17,12 @@
 
 let heightMark = 1.69
 let weightMark = 78
-let markBMI = weightMark / heightMark ** 2 / (heightMark * heightMark)
+let markBMI = weightMark / heightMark ** 2 
 console.log(markBMI)
 
 let heightJohn = 1.95
 let weightJohn = 92
-let johnBMI = weightJohn / heightJohn ** 2 / (heightJohn * heightJohn)
+let johnBMI = weightJohn / heightJohn ** 2 
 console.log(johnBMI)
 
 markHigherBMI = markBMI > johnBMI
