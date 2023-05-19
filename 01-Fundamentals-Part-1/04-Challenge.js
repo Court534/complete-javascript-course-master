@@ -10,9 +10,26 @@
 // start with an if/else statement, and then try to convert it to a ternary
 // operator!)
 
+// Test Data 1
+// let bill = 275;
+
+// Test Data 2
+// let bill = 40;
+
+// Test Data 3
+let bill = 430;
+
+let tip = bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+console.log(tip);
+
 // 2. Print a string to the console containing the bill value, the tip, and the final value
 // (bill + tip). Example: “The bill was 275, the tip was 41.25, and the total value
 // 316.25”
+console.log(
+  `The Bill was ${bill}, So I tipped ${tip}. The total cost of eating out was ${
+    bill + tip
+  }`
+);
 
 // Test data:
 // - Data 1: Test for bill values 275, 40 and 430
