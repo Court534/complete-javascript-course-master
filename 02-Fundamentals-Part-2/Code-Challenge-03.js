@@ -38,10 +38,17 @@ console.log(john.calcBMI());
 
 // 3. Log to the console who has the higher BMI, together with the full name and the
 // respective BMI. Example: "John's BMI (28.3) is higher than Mark's (23.9)!"
-console.log(
-  `${mark.fullName}'s BMI of ${mark.calcBMI()} is higher than 
+if (mark.bmi > john.bmi) {
+  console.log(
+    `${mark.fullName}'s BMI of ${mark.calcBMI()} is higher than 
   ${john.fullName}'s BMI of ${john.calcBMI()}`
-);
+  );
+} else {
+  console.log(
+    `${john.fullName}'s BMI of ${john.calcBMI()} is higher than 
+    ${mark.fullName}'s BMI of ${mark.calcBMI()}`
+  );
+}
 
 // Test data: Marks weights 78 kg and is 1.69 m tall. John weights 92 kg and is 1.95 m
 // tall.
