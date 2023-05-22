@@ -55,3 +55,8 @@ console.log(calcAverage([2, 3, 6]))
 // 4.2. To calculate the average, divide the sum you calculated before by the
 // length of the array (because that's the number of elements)
 // 4.3. Call the function with the 'totals' array
+
+// Average tip
+console.log(calcAverage(tips))
+// Average total
+console.log(calcAverage(totals))
