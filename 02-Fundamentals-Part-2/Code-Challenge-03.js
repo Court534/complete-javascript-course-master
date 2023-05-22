@@ -43,11 +43,13 @@ if (mark.bmi > john.bmi) {
     `${mark.fullName}'s BMI of ${mark.calcBMI()} is higher than 
   ${john.fullName}'s BMI of ${john.calcBMI()}`
   );
-} else {
+} else if (john.bmi > mark.bmi) {
   console.log(
     `${john.fullName}'s BMI of ${john.calcBMI()} is higher than 
     ${mark.fullName}'s BMI of ${mark.calcBMI()}`
   );
+} else {
+  console.log("They have the same BMI!")
 }
 
 // Test data: Marks weights 78 kg and is 1.69 m tall. John weights 92 kg and is 1.95 m
