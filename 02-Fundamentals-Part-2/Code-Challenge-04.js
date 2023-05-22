@@ -45,18 +45,18 @@ console.log(totals);
 const calcAverage = function (arr) {
   let sum = 0;
   for (let i = 0; i < arr.length; i++) {
-    sum += arr[i]
+    sum += arr[i];
   }
-  return sum / arr.length
+  return sum / arr.length;
 };
 
-console.log(calcAverage([2, 3, 6]))
+console.log(calcAverage([2, 3, 6]));
 
 // 4.2. To calculate the average, divide the sum you calculated before by the
 // length of the array (because that's the number of elements)
 // 4.3. Call the function with the 'totals' array
 
 // Average tip
-console.log(calcAverage(tips))
+console.log(calcAverage(tips));
 // Average total
-console.log(calcAverage(totals))
+console.log(calcAverage(totals));
