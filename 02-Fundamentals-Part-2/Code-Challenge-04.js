@@ -18,13 +18,13 @@ const calcTip = function (bill) {
 
 for (let i = 0; i < bill.length; i++) {
   const tip = calcTip(bill[i]);
-  tips.push(tip)
-  const total = bill[i] + tip
-  totals.push(total)
+  tips.push(tip);
+  const total = bill[i] + tip;
+  totals.push(total);
 }
 
-console.log(tips)
-console.log(totals)
+console.log(tips);
+console.log(totals);
 
 // Test data: 22, 295, 176, 440, 37, 105, 10, 1100, 86 and 52
 // Hints: Call ‘calcTip ‘in the loop and use the push method to add values to the
@@ -41,6 +41,16 @@ console.log(totals)
 // array using a for loop. In each iteration, add the current value to the
 // 'sum' variable. This way, by the end of the loop, you have all values
 // added together
+
+const calcAverage = function (arr) {
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    sum += arr[i]
+  }
+  return sum / arr.length
+};
+
+console.log(calcAverage([2, 3, 6]))
 
 // 4.2. To calculate the average, divide the sum you calculated before by the
 // length of the array (because that's the number of elements)
