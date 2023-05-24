@@ -7,7 +7,16 @@
 // Your tasks:
 // 1. Create a function 'printForecast' which takes in an array 'arr' and logs a
 // string like the above to the console. Try it with both test datasets.
+testData1 = [17, 21, 23];
+testData2 = [12, 5, -5, 0, 4];
 
+const printForecast = function (arr) {
+  for (let i = 0; i < arr.length; arr++) {
+    let str = "";
+  }
+};
+
+console.log(printForecast([17, 21, 23]));
 // 2. Use the problem-solving framework: Understand the problem and break it up
 // into sub-problems!
 
