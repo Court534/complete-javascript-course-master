@@ -11,12 +11,17 @@ testData1 = [17, 21, 23];
 testData2 = [12, 5, -5, 0, 4];
 
 const printForecast = function (arr) {
-  for (let i = 0; i < arr.length; arr++) {
-    let str = "";
+
+  let str = "";
+
+  for (let i = 0; i < arr.length; i++) {
+    str = str + `... ${arr[i]}c in ${i + 1} days `
   }
+  return str;
 };
 
-console.log(printForecast([17, 21, 23]));
+console.log(printForecast(testData1));
+console.log(printForecast(testData2));
 // 2. Use the problem-solving framework: Understand the problem and break it up
 // into sub-problems!
 
