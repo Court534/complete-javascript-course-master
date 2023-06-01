@@ -12,6 +12,10 @@ const restaurant = {
   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
 
+  order: function(starterIndex, mainIndex) {
+    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]]
+  },
+
   openingHours: {
     thu: {
       open: 12,
@@ -36,3 +40,13 @@ const c = arr[3]
 // Destructured array
 const [d, e, f] = arr
 console.log(d, e, f); // OUTPUT: 1 2 3
+
+// Lets take some code from the restaurant object above
+// const [first, second] = restaurant.categories
+// console.log(first, second); // OUTPUT: Italian Pizzeria
+
+// If you need to skip an item 
+const [first, ,second] = restaurant.categories
+console.log(first, second); // OUTPUT: Italian Vegetarian
+
+console.log(restaurant.order(2, 0))
