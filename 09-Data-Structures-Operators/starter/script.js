@@ -27,3 +27,12 @@ const restaurant = {
     },
   },
 };
+
+const arr = [1, 2, 3]
+const a = arr[0]
+const b = arr[2]
+const c = arr[3]
+
+// Destructured array
+const [d, e, f] = arr
+console.log(d, e, f); // OUTPUT: 1 2 3
