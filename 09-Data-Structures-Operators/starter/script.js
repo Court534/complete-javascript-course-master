@@ -54,10 +54,15 @@ const [starter, main] = restaurant.order(2, 0);
 console.log(starter, main);
 
 // Nested arrays
-const nested = [2, 4, [5, 6]]
+const nested = [2, 4, [5, 6]];
 // const [i, , j] = nested
 // console.log(i, j); // OUTPUT: 2 [ 5, 6 ]
 
 // Destructuring on multiple levels
-const [i, , [j, k]] = nested
+const [i, , [j, k]] = nested;
 console.log(i, j, k); // OUTPUT: 2 5 6
+
+// Default values
+// Imagine we have an array but we don't know how many items are inside
+const [p = 1, q = 1, r = 1] = [8, 9];
+console.log(p, q, r); // Rather that getting undefined, by including a third item that doens't exist (r) we return 1
