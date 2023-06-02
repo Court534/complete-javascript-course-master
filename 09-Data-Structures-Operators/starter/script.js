@@ -31,10 +31,10 @@ const restaurant = {
   },
 };
 
-const arr = [1, 2, 3];
-const a = arr[0];
-const b = arr[2];
-const c = arr[3];
+// const arr = [1, 2, 3];
+// const a = arr[0];
+// const b = arr[2];
+// const c = arr[3];
 
 // Destructuring Objects
 // const { name, openingHours, categories } = restaurant;
@@ -50,6 +50,19 @@ const c = arr[3];
 
 const { menu = [], starterMenu: starters = []} = restaurant
 console.log(menu, starters);
+
+// Mutating variables
+let a = 111;
+let b = 999;
+const obj = {a: 23, b: 7, c: 14}
+console.log(a, b);
+
+({a, b} = obj)
+console.log(a, b);
+
+// Nested objects
+
+
 
 // Destructured array
 // const [d, e, f] = arr;
