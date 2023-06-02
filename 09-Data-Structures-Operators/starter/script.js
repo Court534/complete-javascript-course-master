@@ -12,10 +12,6 @@ const restaurant = {
   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
 
-  order: function (starterIndex, mainIndex) {
-    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
-  },
-
   openingHours: {
     thu: {
       open: 12,
@@ -30,6 +26,9 @@ const restaurant = {
       close: 24,
     },
   },
+  order: function (starterIndex, mainIndex) {
+    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+  },
 };
 
 const arr = [1, 2, 3];
@@ -37,32 +36,36 @@ const a = arr[0];
 const b = arr[2];
 const c = arr[3];
 
+// Destructuring Objects
+const { name, openingHours, categories } = restaurant;
+console.log(name, openingHours, categories);
+
 // Destructured array
-const [d, e, f] = arr;
-console.log(d, e, f); // OUTPUT: 1 2 3
+// const [d, e, f] = arr;
+// console.log(d, e, f); // OUTPUT: 1 2 3
 
 // Lets take some code from the restaurant object above
 // const [first, second] = restaurant.categories
 // console.log(first, second); // OUTPUT: Italian Pizzeria
 
 // If you need to skip an item
-const [first, , second] = restaurant.categories;
-console.log(first, second); // OUTPUT: Italian Vegetarian
+// const [first, , second] = restaurant.categories;
+// console.log(first, second); // OUTPUT: Italian Vegetarian
 
 // Destructuring 2 return values from the order function
-const [starter, main] = restaurant.order(2, 0);
-console.log(starter, main);
+// const [starter, main] = restaurant.order(2, 0);
+// console.log(starter, main);
 
 // Nested arrays
-const nested = [2, 4, [5, 6]];
+// const nested = [2, 4, [5, 6]];
 // const [i, , j] = nested
 // console.log(i, j); // OUTPUT: 2 [ 5, 6 ]
 
 // Destructuring on multiple levels
-const [i, , [j, k]] = nested;
-console.log(i, j, k); // OUTPUT: 2 5 6
+// const [i, , [j, k]] = nested;
+// console.log(i, j, k); // OUTPUT: 2 5 6
 
 // Default values
 // Imagine we have an array but we don't know how many items are inside
-const [p = 1, q = 1, r = 1] = [8, 9];
-console.log(p, q, r); // Rather that getting undefined, by including a third item that doens't exist (r) we return 1
+// const [p = 1, q = 1, r = 1] = [8, 9];
+// console.log(p, q, r); // Rather that getting undefined, by including a third item that doens't exist (r) we return 1
