@@ -37,8 +37,19 @@ const b = arr[2];
 const c = arr[3];
 
 // Destructuring Objects
-const { name, openingHours, categories } = restaurant;
-console.log(name, openingHours, categories);
+// const { name, openingHours, categories } = restaurant;
+// console.log(name, openingHours, categories);
+
+// Handy for renaming new variables from API calls
+// const {
+//   name: restaurantName,
+//   openingHours: hours,
+//   categories: cat,
+// } = restaurant;
+// console.log(restaurantName, hours, cat);
+
+const { menu = [], starterMenu: starters = []} = restaurant
+console.log(menu, starters);
 
 // Destructured array
 // const [d, e, f] = arr;
