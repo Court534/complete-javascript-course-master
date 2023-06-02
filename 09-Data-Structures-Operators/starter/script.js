@@ -61,8 +61,11 @@ console.log(a, b);
 console.log(a, b);
 
 // Nested objects
+// const { fri } = restaurant.openingHours
+// console.log(fri);
 
-
+const { fri: {open, close} } = restaurant.openingHours
+console.log(open, close);
 
 // Destructured array
 // const [d, e, f] = arr;
