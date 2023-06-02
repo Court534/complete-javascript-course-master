@@ -29,7 +29,28 @@ const restaurant = {
   order: function (starterIndex, mainIndex) {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
+
+  orderDelivery: function ({
+    starterIndex = [1],
+    mainIndex = [0],
+    time = ['20:00'],
+    address,
+  }) {
+    console.log(this.starterMenu[starterIndex], this.mainMenu[mainIndex], time, address);
+  },
 };
+
+restaurant.orderDelivery({
+  time: '22:30',
+  address: 'Via del Sol, 21',
+  mainIndex: 2,
+  starterIndex: 2,
+});
+
+restaurant.orderDelivery({
+  address: 'Via del Sol, 21',
+  starterIndex: 1,
+});
 
 // const arr = [1, 2, 3];
 // const a = arr[0];
@@ -48,23 +69,25 @@ const restaurant = {
 // } = restaurant;
 // console.log(restaurantName, hours, cat);
 
-const { menu = [], starterMenu: starters = []} = restaurant
+const { menu = [], starterMenu: starters = [] } = restaurant;
 console.log(menu, starters);
 
 // Mutating variables
 let a = 111;
 let b = 999;
-const obj = {a: 23, b: 7, c: 14}
+const obj = { a: 23, b: 7, c: 14 };
 console.log(a, b);
 
-({a, b} = obj)
+({ a, b } = obj);
 console.log(a, b);
 
 // Nested objects
 // const { fri } = restaurant.openingHours
 // console.log(fri);
 
-const { fri: {open, close} } = restaurant.openingHours
+const {
+  fri: { open, close },
+} = restaurant.openingHours;
 console.log(open, close);
 
 // Destructured array
