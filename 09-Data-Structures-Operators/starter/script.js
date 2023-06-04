@@ -133,36 +133,52 @@ const restaurant = {
 // Spread operator
 
 // Old way of adding to an existing array
-const array = [7, 8, 9];
-const badNewArray = [1, 2, array[0], array[1], array[2]];
-console.log(badNewArray);
+// const array = [7, 8, 9];
+// const badNewArray = [1, 2, array[0], array[1], array[2]];
+// console.log(badNewArray);
 
 // Newer was using the spread operator
-const newArray = [1, 2, ...array];
-console.log(...newArray);
-console.log(...array);
+// const newArray = [1, 2, ...array];
+// console.log(...newArray);
+// console.log(...array);
 
-const newMenu = [...restaurant.mainMenu, 'Gnocci'];
-console.log(newMenu);
+// const newMenu = [...restaurant.mainMenu, 'Gnocci'];
+// console.log(newMenu);
 
 // Copy array
-const mainMenuCopy = [...restaurant.mainMenu];
+// const mainMenuCopy = [...restaurant.mainMenu];
 
 // Join two arrays
-const newMainMenuArray = [...restaurant.mainMenu, ...restaurant.starterMenu];
-console.log(newMainMenuArray);
+// const newMainMenuArray = [...restaurant.mainMenu, ...restaurant.starterMenu];
+// console.log(newMainMenuArray);
 
 // The spread operator work in anthing interable
-const str = 'Courtney';
-const letters = [...str, ' ', 'S'];
-console.log(letters);
-console.log(...str);
+// const str = 'Courtney';
+// const letters = [...str, ' ', 'S'];
+// console.log(letters);
+// console.log(...str);
 
-const ingrediants = [
-  prompt("Let's make pasta, Ingreients 1?"),
-  prompt("Let's make pasta, Ingreients 2?"),
-  prompt("Let's make pasta, Ingreients 3?"),
-];
-console.log(ingrediants);
+// const ingrediants = [
+//   prompt("Let's make pasta, Ingreients 1?"),
+//   prompt("Let's make pasta, Ingreients 2?"),
+//   prompt("Let's make pasta, Ingreients 3?"),
+// ];
+// console.log(ingrediants);
 
-restaurant.orderPasta();
+// restaurant.orderPasta();
+
+// Spread operator on the right side of the =
+const arr = [1, 2, ...[3, 4]]
+console.log(arr); // output [ 1, 2, 3, 4 ]
+
+// Rest operator on the the left sode of the =
+const [a, b, ...others] = [1, 2, 3, 4, 5]
+console.log(a, b, others); // output 1 2 [ 3, 4, 5 ]
+
+const [pizza, , risotto, ...otherFood] = [...restaurant.mainMenu, ...restaurant.starterMenu]
+console.log(pizza, risotto, otherFood);
+
+// Objects 
+const { sat, ...weekdays } = restaurant.openingHours
+console.log(weekdays);
+
