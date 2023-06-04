@@ -38,19 +38,25 @@ const restaurant = {
   }) {
     console.log(this.starterMenu[starterIndex], this.mainMenu[mainIndex], time, address);
   },
+  
+  // Create a function for ordering pasta with only three ingrediant
+  orderPAsta: function (ing1, ing2, ing3) {
+
+  }
+
 };
 
-restaurant.orderDelivery({
-  time: '22:30',
-  address: 'Via del Sol, 21',
-  mainIndex: 2,
-  starterIndex: 2,
-});
+// restaurant.orderDelivery({
+//   time: '22:30',
+//   address: 'Via del Sol, 21',
+//   mainIndex: 2,
+//   starterIndex: 2,
+// });
 
-restaurant.orderDelivery({
-  address: 'Via del Sol, 21',
-  starterIndex: 1,
-});
+// restaurant.orderDelivery({
+//   address: 'Via del Sol, 21',
+//   starterIndex: 1,
+// });
 
 // const arr = [1, 2, 3];
 // const a = arr[0];
@@ -69,26 +75,26 @@ restaurant.orderDelivery({
 // } = restaurant;
 // console.log(restaurantName, hours, cat);
 
-const { menu = [], starterMenu: starters = [] } = restaurant;
-console.log(menu, starters);
+// const { menu = [], starterMenu: starters = [] } = restaurant;
+// console.log(menu, starters);
 
 // Mutating variables
-let a = 111;
-let b = 999;
-const obj = { a: 23, b: 7, c: 14 };
-console.log(a, b);
+// let a = 111;
+// let b = 999;
+// const obj = { a: 23, b: 7, c: 14 };
+// console.log(a, b);
 
-({ a, b } = obj);
-console.log(a, b);
+// ({ a, b } = obj);
+// console.log(a, b);
 
 // Nested objects
 // const { fri } = restaurant.openingHours
 // console.log(fri);
 
-const {
-  fri: { open, close },
-} = restaurant.openingHours;
-console.log(open, close);
+// const {
+//   fri: { open, close },
+// } = restaurant.openingHours;
+// console.log(open, close);
 
 // Destructured array
 // const [d, e, f] = arr;
@@ -119,3 +125,32 @@ console.log(open, close);
 // Imagine we have an array but we don't know how many items are inside
 // const [p = 1, q = 1, r = 1] = [8, 9];
 // console.log(p, q, r); // Rather that getting undefined, by including a third item that doens't exist (r) we return 1
+
+// Spread operator 
+
+// Old way of adding to an existing array
+const array = [7, 8, 9]
+const badNewArray = [1, 2, array[0], array[1], array[2]]
+console.log(badNewArray);
+
+// Newer was using the spread operator
+const newArray = [1, 2, ...array]
+console.log(...newArray);
+console.log(...array)
+
+
+const newMenu = [...restaurant.mainMenu, "Gnocci"]
+console.log(newMenu);
+
+// Copy array
+const mainMenuCopy = [...restaurant.mainMenu]
+
+// Join two arrays
+const newMainMenuArray = [...restaurant.mainMenu, ...restaurant.starterMenu]
+console.log(newMainMenuArray);
+
+// The spread operator work in anthing interable
+const str = "Courtney"
+const letters = [...str, " ", "S"]
+console.log(letters);
+console.log(...str);
