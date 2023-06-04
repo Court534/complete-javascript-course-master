@@ -207,4 +207,4 @@ add(x); // output: 023,5,7
 add(...x); // output: 35
 
 restaurant.orderPizza('Pepperoni', 'Onions', 'Chicken');
-restaurant.orderPizza("Pepperoni")
+restaurant.orderPizza('Pepperoni');
