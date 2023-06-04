@@ -46,7 +46,12 @@ const restaurant = {
 
   // Create a function for ordering pasta with only three ingrediant
   orderPasta: function (ing1, ing2, ing3) {
-    `Here is your pasta with ${ing1}, ${ing2} and ${ing3}`;
+    console.log(`Here is your pasta with ${ing1}, ${ing2} and ${ing3}`);
+  },
+
+  orderPizza: function (mainIng, ...otherIng) {
+    console.log(mainIng);
+    console.log(otherIng);
   },
 };
 
@@ -164,21 +169,42 @@ const restaurant = {
 //   prompt("Let's make pasta, Ingreients 3?"),
 // ];
 // console.log(ingrediants);
-
-// restaurant.orderPasta();
+// restaurant.orderPasta(ingrediants);
 
 // Spread operator on the right side of the =
-const arr = [1, 2, ...[3, 4]]
+const arr = [1, 2, ...[3, 4]];
 console.log(arr); // output [ 1, 2, 3, 4 ]
 
 // Rest operator on the the left sode of the =
-const [a, b, ...others] = [1, 2, 3, 4, 5]
+const [a, b, ...others] = [1, 2, 3, 4, 5];
 console.log(a, b, others); // output 1 2 [ 3, 4, 5 ]
 
-const [pizza, , risotto, ...otherFood] = [...restaurant.mainMenu, ...restaurant.starterMenu]
+const [pizza, , risotto, ...otherFood] = [
+  ...restaurant.mainMenu,
+  ...restaurant.starterMenu,
+];
 console.log(pizza, risotto, otherFood);
 
-// Objects 
-const { sat, ...weekdays } = restaurant.openingHours
+// Objects
+const { sat, ...weekdays } = restaurant.openingHours;
 console.log(weekdays);
 
+// Functions
+const add = function (...numbers) {
+  let sum = 0;
+  for (let i = 0; i < numbers.length; i++) {
+    sum += numbers[i];
+  }
+  console.log(sum);
+};
+
+// The fuction can take any numbers because of the ...numbers used in the argument of the function
+add(2, 3);
+add(2, 5, 4, 8, 10);
+
+const x = [23, 5, 7];
+add(x); // output: 023,5,7
+add(...x); // output: 35
+
+restaurant.orderPizza('Pepperoni', 'Onions', 'Chicken');
+restaurant.orderPizza("Pepperoni")
