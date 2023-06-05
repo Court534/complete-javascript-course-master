@@ -211,16 +211,26 @@ const restaurant = {
 
 // Short-Circuiting (Use any data type, return any data type)
 // It will always return first truthy value
-console.log(3 || 'Courtney'); // output: 3
-console.log('' || 'Courtney'); // output: Courtney
-console.log(true || 0); // output: true
-console.log(undefined || null); // output: null
+// console.log(3 || 'Courtney'); // output: 3
+// console.log('' || 'Courtney'); // output: Courtney
+// console.log(true || 0); // output: true
+// console.log(undefined || null); // output: null
 
-const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
-console.log(guests1); // output: 10 because numGuests doen't exist
+// const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
+// console.log(guests1); // output: 10 because numGuests doen't exist
 
+// restaurant.numGuests = 25;
+// const guests2 = restaurant.numGuests ? restaurant.numGuests : 10;
+// console.log(guests2); // output: 25 because numGuests now exists
+
+// Practical exercise
+// if (restaurant.orderPizza) {
+//   restaurant.orderPizza("mushrooms", "sausage")
+// }
+
+// restaurant.orderPizza && restaurant.orderPizza("mushrooms", "sausage")
+
+// Nullish coalescing operator (??)
 restaurant.numGuests = 25;
-const guests2 = restaurant.numGuests ? restaurant.numGuests : 10;
-console.log(guests2); // output: 25 because numGuests now exists
-
-
+const guests = restaurant.numGuests ?? 10;
+console.log(guests);
