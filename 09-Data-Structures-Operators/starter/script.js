@@ -172,39 +172,55 @@ const restaurant = {
 // restaurant.orderPasta(ingrediants);
 
 // Spread operator on the right side of the =
-const arr = [1, 2, ...[3, 4]];
-console.log(arr); // output [ 1, 2, 3, 4 ]
+// const arr = [1, 2, ...[3, 4]];
+// console.log(arr); // output [ 1, 2, 3, 4 ]
 
 // Rest operator on the the left sode of the =
-const [a, b, ...others] = [1, 2, 3, 4, 5];
-console.log(a, b, others); // output 1 2 [ 3, 4, 5 ]
+// const [a, b, ...others] = [1, 2, 3, 4, 5];
+// console.log(a, b, others); // output 1 2 [ 3, 4, 5 ]
 
-const [pizza, , risotto, ...otherFood] = [
-  ...restaurant.mainMenu,
-  ...restaurant.starterMenu,
-];
-console.log(pizza, risotto, otherFood);
+// const [pizza, , risotto, ...otherFood] = [
+//   ...restaurant.mainMenu,
+//   ...restaurant.starterMenu,
+// ];
+// console.log(pizza, risotto, otherFood);
 
 // Objects
-const { sat, ...weekdays } = restaurant.openingHours;
-console.log(weekdays);
+// const { sat, ...weekdays } = restaurant.openingHours;
+// console.log(weekdays);
 
 // Functions
-const add = function (...numbers) {
-  let sum = 0;
-  for (let i = 0; i < numbers.length; i++) {
-    sum += numbers[i];
-  }
-  console.log(sum);
-};
+// const add = function (...numbers) {
+//   let sum = 0;
+//   for (let i = 0; i < numbers.length; i++) {
+//     sum += numbers[i];
+//   }
+//   console.log(sum);
+// };
 
 // The fuction can take any numbers because of the ...numbers used in the argument of the function
-add(2, 3);
-add(2, 5, 4, 8, 10);
+// add(2, 3);
+// add(2, 5, 4, 8, 10);
 
-const x = [23, 5, 7];
-add(x); // output: 023,5,7
-add(...x); // output: 35
+// const x = [23, 5, 7];
+// add(x); // output: 023,5,7
+// add(...x); // output: 35
 
-restaurant.orderPizza('Pepperoni', 'Onions', 'Chicken');
-restaurant.orderPizza('Pepperoni');
+// restaurant.orderPizza('Pepperoni', 'Onions', 'Chicken');
+// restaurant.orderPizza('Pepperoni');
+
+// Short-Circuiting (Use any data type, return any data type)
+// It will always return first truthy value
+console.log(3 || 'Courtney'); // output: 3
+console.log('' || 'Courtney'); // output: Courtney
+console.log(true || 0); // output: true
+console.log(undefined || null); // output: null
+
+const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
+console.log(guests1); // output: 10 because numGuests doen't exist
+
+restaurant.numGuests = 25;
+const guests2 = restaurant.numGuests ? restaurant.numGuests : 10;
+console.log(guests2); // output: 25 because numGuests now exists
+
+
