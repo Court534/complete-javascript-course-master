@@ -56,7 +56,7 @@ console.log(players1, players2);
 // goalkeeper's name, and one array ('fieldPlayers') with all the remaining 10
 // field players
 
-const [gk, ...fieldPlayers] = players1
+const [gk, ...fieldPlayers] = players1;
 console.log(gk, fieldPlayers);
 
 // 3. Create an array 'allPlayers' containing all players of both teams (22
@@ -92,9 +92,10 @@ const printGoals = function (...players) {
 // Test
 // printGoals('Thiago', 'Coutinho', 'Perisic')
 
-printGoals(...game.scored)
+printGoals(...game.scored);
 
 // 7. The team with the lower odd is more likely to win. Print to the console which
 // team is more likely to win, without using an if/else statement or the ternary
 // operator
-team1 < team2 && console.log("Team 1 is more likely to win");
+team1 < team2 && console.log('Team 1 is more likely to win');
+team1 > team2 && console.log('Team 1 is more likely to win');
