@@ -65,6 +65,16 @@ const restaurant = {
   },
 };
 
+const properties = Object.keys(openingHours)
+console.log(properties);
+
+let openHours = `We are open ${properties.length} days a week: `;
+
+for (const day of Object.keys(openingHours)) {
+  openHours += `${day}, `
+}
+console.log(openHours);
+
 // With optional chaining
 // console.log(restaurant.openingHours.fri?.open);
 
