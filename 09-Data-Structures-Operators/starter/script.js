@@ -305,39 +305,62 @@ for (const day of Object.keys(openingHours)) {
 // console.log([1, 2] + [3, 4]);
 
 // sets
-const ordersSet = new Set(['pasta', 'pizza', 'risotto', 'pizza', 'pasta']);
-console.log(ordersSet); // Set(3) { 'pasta', 'pizza', 'risotto' }
+// const ordersSet = new Set(['pasta', 'pizza', 'risotto', 'pizza', 'pasta']);
+// console.log(ordersSet); // Set(3) { 'pasta', 'pizza', 'risotto' }
 
-console.log(ordersSet.size); // 3
-console.log(ordersSet.has('pizza')); // true
-console.log(ordersSet.has('bread')); // false
+// console.log(ordersSet.size); // 3
+// console.log(ordersSet.has('pizza')); // true
+// console.log(ordersSet.has('bread')); // false
 
 // Although two garlic breads were added we only see one in the Set
-ordersSet.add('garlic bread');
-ordersSet.add('garlic bread');
-console.log(ordersSet); // Set(4) { 'pasta', 'pizza', 'risotto', 'garlic bread' }
+// ordersSet.add('garlic bread');
+// ordersSet.add('garlic bread');
+// console.log(ordersSet); // Set(4) { 'pasta', 'pizza', 'risotto', 'garlic bread' }
 
 // Deleting items
-ordersSet.delete('garlic bread')
-console.log(ordersSet); // Set(3) { 'pasta', 'pizza', 'risotto' }
+// ordersSet.delete('garlic bread')
+// console.log(ordersSet); // Set(3) { 'pasta', 'pizza', 'risotto' }
 
 // We cannot retrive items from a set as they have no indexs
 // We can loop over a Set however
-for (const order of ordersSet) {
-  console.log(order);
-} // pasta
-  // pizza
-  // risotto
+// for (const order of ordersSet) {
+//   console.log(order);
+//} // pasta
+// pizza
+// risotto
 
 // The main use cases for Set's are to remove duplicates
 
 // example array
-const staff = ['waiter', 'chef', 'waiter', 'manager', 'chef', 'waiter']
-const staffSet = new Set(staff)
-console.log(staffSet); // Set(3) { 'waiter', 'chef', 'manager' }
+// const staff = ['waiter', 'chef', 'waiter', 'manager', 'chef', 'waiter']
+// const staffSet = new Set(staff)
+// console.log(staffSet); // Set(3) { 'waiter', 'chef', 'manager' }
 
 // Putting the unique values back into an array
-const staffSetArray = [...new Set(staff)]
-console.log(staffSetArray); // [ 'waiter', 'chef', 'manager' ]
+// const staffSetArray = [...new Set(staff)]
+// console.log(staffSetArray); // [ 'waiter', 'chef', 'manager' ]
 
+// map/maps
+const rest = new Map();
+rest.set('name', 'Classico Italiano');
+rest.set(1, 'Firenze, Italy');
+console.log(rest.set(2, 'Lisbon, Portugal'));
+// output
+// Map(3) {
+//   'name' => 'Classico Italiano',
+//   1 => 'Firenze, Italy',
+//   2 => 'Lisbon, Portugal'
+// }
 
+rest
+  .set('categories', ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'])
+  .set('open', 12)
+  .set('close', 23)
+  .set(true, 'we are open')
+  .set(false, 'we are closed');
+
+console.log(rest.get('name'));
+console.log(rest.get(true));
+
+const time = 21
+rest.get(time > rest.get('open') && time < rest.get('close'))
