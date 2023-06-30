@@ -103,14 +103,18 @@ team1 > team2 && console.log('Team 1 is more likely to win');
 // Your tasks:
 // 1. Loop over the game.scored array and print each player name to the console,
 // along with the goal number (Example: "Goal 1: Lewandowski")
-for (let goal of printGoals) {
-  goalCount = 0
-  goalCount += 1
-  console.log(`Goal ${goalCount}: ${goal}`);
+for (const [i, player] of game.scored.entries()) {
+  console.log(`Goal ${i + 1}: ${player}`);
 }
 
 // 2. Use a loop to calculate the average odd and log it to the console (We already
 // studied how to calculate averages, you can go check if you don't remember)
+let average = 0
+for (const odd of Object.values(game.odds)) {
+  average += odd
+  average /= Object.values(game.odds).length
+}
+console.log(average);
 
 // 3. Print the 3 odds to the console, but in a nice formatted way, exactly like this:
 // Odd of victory Bayern Munich: 1.33
