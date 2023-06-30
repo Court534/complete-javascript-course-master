@@ -65,15 +65,15 @@ const restaurant = {
   },
 };
 
-const properties = Object.keys(openingHours)
-console.log(properties);
+const properties = Object.keys(openingHours);
+// console.log(properties);
 
 let openHours = `We are open ${properties.length} days a week: `;
 
 for (const day of Object.keys(openingHours)) {
-  openHours += `${day}, `
+  openHours += `${day}, `;
 }
-console.log(openHours);
+// console.log(openHours);
 
 // With optional chaining
 // console.log(restaurant.openingHours.fri?.open);
@@ -85,9 +85,9 @@ console.log(openHours);
 //   console.log(`On ${day} we open at ${open}`);
 // }
 
-// Methods 
+// Methods
 
-// Existing methods 
+// Existing methods
 // console.log(restaurant.order?.(0,1) ?? "Method does not exist");
 
 // Non-existing methods
@@ -96,9 +96,6 @@ console.log(openHours);
 // Arrays
 // const users = [{name: "Courtney", email: "courtney@hi.com"}]
 // console.log(users[0]?.name ?? 'Users array empty');
-
-
-
 
 // restaurant.orderDelivery({
 //   time: '22:30',
@@ -306,3 +303,41 @@ console.log(openHours);
 // console.log(rest2);
 
 // console.log([1, 2] + [3, 4]);
+
+// sets
+const ordersSet = new Set(['pasta', 'pizza', 'risotto', 'pizza', 'pasta']);
+console.log(ordersSet); // Set(3) { 'pasta', 'pizza', 'risotto' }
+
+console.log(ordersSet.size); // 3
+console.log(ordersSet.has('pizza')); // true
+console.log(ordersSet.has('bread')); // false
+
+// Although two garlic breads were added we only see one in the Set
+ordersSet.add('garlic bread');
+ordersSet.add('garlic bread');
+console.log(ordersSet); // Set(4) { 'pasta', 'pizza', 'risotto', 'garlic bread' }
+
+// Deleting items
+ordersSet.delete('garlic bread')
+console.log(ordersSet); // Set(3) { 'pasta', 'pizza', 'risotto' }
+
+// We cannot retrive items from a set as they have no indexs
+// We can loop over a Set however
+for (const order of ordersSet) {
+  console.log(order);
+} // pasta
+  // pizza
+  // risotto
+
+// The main use cases for Set's are to remove duplicates
+
+// example array
+const staff = ['waiter', 'chef', 'waiter', 'manager', 'chef', 'waiter']
+const staffSet = new Set(staff)
+console.log(staffSet); // Set(3) { 'waiter', 'chef', 'manager' }
+
+// Putting the unique values back into an array
+const staffSetArray = [...new Set(staff)]
+console.log(staffSetArray); // [ 'waiter', 'chef', 'manager' ]
+
+
