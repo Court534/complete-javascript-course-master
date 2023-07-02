@@ -371,4 +371,34 @@ const question = new Map([
   [1, 'C'],
   [2, 'Java'],
   [3, 'JavaScript'],
+  ['correct', 3],
+  [true, 'Correct!'],
+  [false, 'Try again!'],
 ]);
+
+console.log(question);
+
+console.log(Object.entries(openingHours));
+const hoursMap = new Map(Object.entries(openingHours))
+console.log(hoursMap);
+
+// Quiz App
+console.log(question.get('question'));
+
+for (const [key, value] of question) {
+  if (typeof key === 'number') {
+    console.log(`Answer ${key}: ${value}`);
+  }
+}
+const answer = Number(prompt('Your answer'))
+console.log(answer);
+
+// My answer 
+if (answer === question.get('correct')) {
+  console.log(question.get(true));
+} else {
+  console.log(question.get(false));
+}
+
+// Instructors answer
+console.log(question.get(question.get('correct') === answer));
