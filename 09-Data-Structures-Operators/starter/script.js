@@ -341,10 +341,10 @@ for (const day of Object.keys(openingHours)) {
 // console.log(staffSetArray); // [ 'waiter', 'chef', 'manager' ]
 
 // map/maps
-const rest = new Map();
-rest.set('name', 'Classico Italiano');
-rest.set(1, 'Firenze, Italy');
-console.log(rest.set(2, 'Lisbon, Portugal'));
+// const rest = new Map();
+// rest.set('name', 'Classico Italiano');
+// rest.set(1, 'Firenze, Italy');
+// console.log(rest.set(2, 'Lisbon, Portugal'));
 // output
 // Map(3) {
 //   'name' => 'Classico Italiano',
@@ -352,15 +352,23 @@ console.log(rest.set(2, 'Lisbon, Portugal'));
 //   2 => 'Lisbon, Portugal'
 // }
 
-rest
-  .set('categories', ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'])
-  .set('open', 12)
-  .set('close', 23)
-  .set(true, 'we are open')
-  .set(false, 'we are closed');
+// rest
+//   .set('categories', ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'])
+//   .set('open', 12)
+//   .set('close', 23)
+//   .set(true, 'we are open')
+//   .set(false, 'we are closed');
 
-console.log(rest.get('name'));
-console.log(rest.get(true));
+// console.log(rest.get('name'));
+// console.log(rest.get(true));
 
-const time = 21
-rest.get(time > rest.get('open') && time < rest.get('close'))
+// const time = 21
+// rest.get(time > rest.get('open') && time < rest.get('close'))
+
+// Maps: Iteration
+const question = new Map([
+  ['question', 'What is the best programming language?'],
+  [1, 'C'],
+  [2, 'Java'],
+  [3, 'JavaScript'],
+]);
