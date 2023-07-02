@@ -366,39 +366,84 @@ for (const day of Object.keys(openingHours)) {
 // rest.get(time > rest.get('open') && time < rest.get('close'))
 
 // Maps: Iteration
-const question = new Map([
-  ['question', 'What is the best programming language?'],
-  [1, 'C'],
-  [2, 'Java'],
-  [3, 'JavaScript'],
-  ['correct', 3],
-  [true, 'Correct!'],
-  [false, 'Try again!'],
-]);
+// const question = new Map([
+//   ['question', 'What is the best programming language?'],
+//   [1, 'C'],
+//   [2, 'Java'],
+//   [3, 'JavaScript'],
+//   ['correct', 3],
+//   [true, 'Correct!'],
+//   [false, 'Try again!'],
+// ]);
 
-console.log(question);
+// console.log(question);
 
-console.log(Object.entries(openingHours));
-const hoursMap = new Map(Object.entries(openingHours))
-console.log(hoursMap);
+// console.log(Object.entries(openingHours));
+// const hoursMap = new Map(Object.entries(openingHours))
+// console.log(hoursMap);
 
 // Quiz App
-console.log(question.get('question'));
+// console.log(question.get('question'));
 
-for (const [key, value] of question) {
-  if (typeof key === 'number') {
-    console.log(`Answer ${key}: ${value}`);
-  }
-}
-const answer = Number(prompt('Your answer'))
-console.log(answer);
+// for (const [key, value] of question) {
+//   if (typeof key === 'number') {
+//     console.log(`Answer ${key}: ${value}`);
+//   }
+// }
+// const answer = Number(prompt('Your answer'))
+// console.log(answer);
 
-// My answer 
-if (answer === question.get('correct')) {
-  console.log(question.get(true));
-} else {
-  console.log(question.get(false));
-}
+// My answer
+// if (answer === question.get('correct')) {
+//   console.log(question.get(true));
+// } else {
+//   console.log(question.get(false));
+// }
 
 // Instructors answer
-console.log(question.get(question.get('correct') === answer));
+// console.log(question.get(question.get('correct') === answer));
+
+// Write a program that receives a list of variable names written in underscore_case
+// and convert them to camelCase.
+
+// The input will come from a textarea inserted into the DOM (see code below to
+// insert the elements), and conversion will happen when the button is pressed.
+
+// Test data (pasted to textarea, including spaces):
+// underscore_case
+// first_name
+// Some_Variable
+//  calculate_AGE
+// delayed_departure
+
+// Should produce this output (5 separate console.log outputs):
+// underscoreCase ✅
+// firstName ✅✅
+// someVariable ✅✅✅
+// calculateAge ✅✅✅✅
+// delayedDeparture ✅✅✅✅✅
+
+// Hints:
+// § Remember which character defines a new line in the textarea
+// § The solution only needs to work for a variable made out of 2 words, like a_b
+// § Start without worrying about the ✅. Tackle that only after you have the variable
+// name conversion working
+// § This challenge is difficult on purpose, so start watching the solution in case
+// you're stuck. Then pause and continue!
+// Afterwards, test with your own test data!
+
+document.body.append(document.createElement('textarea'));
+document.body.append(document.createElement('button'));
+
+document.querySelector('button').addEventListener('click', function() {
+  const text = document.querySelector('textarea').value;
+  console.log(text);
+  const rows = text.split('\n')
+  console.log(rows);
+  
+  for (const row of rows) {
+    const [first, second] = row.toLocaleLowerCase().trim().split('_')
+    const output = `${first}${second.replace(second[0], second[0].toUpperCase())}`
+    console.log(output);
+  }
+})
