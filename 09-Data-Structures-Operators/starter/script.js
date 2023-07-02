@@ -442,7 +442,7 @@ document.querySelector('button').addEventListener('click', function() {
   console.log(rows);
   
   for (const row of rows) {
-    const [first, second] = row.toLocaleLowerCase().trim().split('_')
+    const [first, second] = row.toLowerCase().trim().split('_')
     const output = `${first}${second.replace(second[0], second[0].toUpperCase())}`
     console.log(output);
   }
