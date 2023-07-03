@@ -1,9 +1,5 @@
 'use strict';
 
-// Data needed for a later exercise
-const flights =
-  '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
-
 // Data needed for first part of the section
 const openingHours = {
   thu: {
@@ -432,18 +428,30 @@ for (const day of Object.keys(openingHours)) {
 // you're stuck. Then pause and continue!
 // Afterwards, test with your own test data!
 
-document.body.append(document.createElement('textarea'));
-document.body.append(document.createElement('button'));
+// document.body.append(document.createElement('textarea'));
+// document.body.append(document.createElement('button'));
 
-document.querySelector('button').addEventListener('click', function() {
-  const text = document.querySelector('textarea').value;
-  console.log(text);
-  const rows = text.split('\n')
-  console.log(rows);
-  
-  for (const row of rows) {
-    const [first, second] = row.toLowerCase().trim().split('_')
-    const output = `${first}${second.replace(second[0], second[0].toUpperCase())}`
-    console.log(output);
-  }
-})
+// document.querySelector('button').addEventListener('click', function() {
+//   const text = document.querySelector('textarea').value;
+//   console.log(text);
+//   const rows = text.split('\n')
+//   console.log(rows);
+
+//   for (const row of rows) {
+//     const [first, second] = row.toLowerCase().trim().split('_')
+//     const output = `${first}${second.replace(second[0], second[0].toUpperCase())}`
+//     console.log(output);
+//   }
+// })
+
+// String methods practice
+// Data needed for a later exercise
+const flights =
+  '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
+console.log(flights);
+
+for (const flight of flights.split('+')) {
+  const [departure, takeOff, landing, arrival] = flight.split(';');
+  const output = `${departure.startsWith('_Delayed') ? '🔴' : ''}${departure.replace('_', ' ')} from ${takeOff.slice(0, 3).toUpperCase()} to ${landing.slice(0, 3).toUpperCase()} (${arrival.replace(':', 'h')})`;
+  console.log(output);
+}
